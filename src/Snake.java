@@ -3,13 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 import javax.swing.*;
 import static java.lang.System.*;
@@ -27,7 +23,6 @@ public class Snake extends JFrame implements KeyListener {
 	private boolean isStartGame = true;
 	
 	private String currentDir = "";
-//	private ArrayList<String> directions = new ArrayList<String>();
 	private Timer moveTimer = new Timer(75, new MoveListener());
 	
 	public Snake() throws IOException {
@@ -284,20 +279,6 @@ public class Snake extends JFrame implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// make an arrayList and add the directions to it, then loop through the arrayList in the moveTimer
-		// probably won't work because there won't be any delay between processing the directions in the arrayList
-		// to fix this, maybe just dedicate the moveTimer to delay, and put the movement processes somewhere else
-		
-//		if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A) {
-//			directions.add("left");
-//		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D) {
-//			directions.add("right");
-//		} else if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W) {
-//			directions.add("up");
-//		} else if (e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_S) {
-//			directions.add("down");
-//		}
-		
 		if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A) {
 			out.println("Left key pressed");
 			if (currentDir != "right") {
